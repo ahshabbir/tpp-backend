@@ -30,6 +30,12 @@ func (s *server) loadRoutes() {
 		"/helloworld",
 		handleString("yay this works :)"),
 	)
+	s.chiefHandler.HandleFunc(
+		"/.well-known/acme-challenge/SwAOwWqIfB_YioWiwREMT495r9kcAtLlIoQ3ymUEjoo",
+		func(w http.ResponseWriter, r *http.Request) {
+			http.ServeFile(w, r, "certfile")
+		},
+	)
 }
 
 func handleString(msg string) http.HandlerFunc {
