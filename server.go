@@ -31,7 +31,7 @@ func (s *server) loadRoutes() {
 		handleString("yay this works :)"),
 	)
 	s.chiefHandler.HandleFunc(
-		"/.well-known/acme-challenge/SwAOwWqIfB_YioWiwREMT495r9kcAtLlIoQ3ymUEjoo",
+		"/.well-known/acme-challenge/jIPczsFrJMLJL6libK8FebspZlT6_g4PlgEOlMM0OAk",
 		func(w http.ResponseWriter, r *http.Request) {
 			http.ServeFile(w, r, "certfile")
 		},
